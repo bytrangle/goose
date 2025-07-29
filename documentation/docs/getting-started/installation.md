@@ -228,7 +228,7 @@ Goose works with a set of [supported LLM providers][providers], and you'll need 
     Example:
 
     ```
-    ┌   goose-configure
+    ┌   goose configure
     │
     ◇ What would you like to configure?
     │ Configure Providers
@@ -313,7 +313,7 @@ Goose works with a set of [supported LLM providers][providers], and you'll need 
     To select an option during configuration, use the up and down arrows to highlight your choice then press Enter.
 
     ```
-    ┌   goose-configure
+    ┌   goose configure
     │
     ◇ What would you like to configure?
     │ Configure Providers
