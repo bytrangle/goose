@@ -333,9 +333,9 @@ impl Agent {
                 let enhanced_error = enhance_model_error(e, &provider, config.toolshim).await;
                 // Return a stream that immediately yields the error
                 // This allows the error to be caught by existing error handling in agent.rs
-                return Ok(Box::pin(try_stream! {
-                    yield Err(enhanced_error)?;
-                }));
+                return Ok(Box::pin(futures::stream::once(async move {
+                    Err::<(Option<Message>, Option<ProviderUsage>), ProviderError>(enhanced_error)
+                })));
             }
         };
 
